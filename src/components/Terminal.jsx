@@ -18,7 +18,7 @@ export default function Terminal({
       {/* --- WINDOW TITLE BAR --- */}
       <div className="bg-win-blue p-1 flex items-center justify-between select-none">
         <div className="flex items-center gap-2 px-1">
-          <img src="/win97-logo.png" className="w-4 h-4" alt="icon" />
+          <img src="./win97-logo.png" className="w-4 h-4" alt="icon" />
           <span className="text-white font-bold text-xs tracking-wide">PORTFOLIO.LOG</span>
         </div>
 

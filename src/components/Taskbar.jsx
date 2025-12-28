@@ -45,7 +45,7 @@ export default function Taskbar({ isDarkMode, setIsDarkMode, isMinimized, onRest
         onClick={() => setMenuOpen(!menuOpen)} 
         className={`flex items-center gap-1 px-2 py-0.5 h-full font-bold text-xs win-outset active:win-inset hover:bg-gray-200 text-black ${menuOpen ? 'win-inset bg-gray-300' : ''}`}
       >
-        <img src="/win97-logo.png" className="w-4 h-4 mr-1" alt="Start" /> 
+        <img src="./win97-logo.png" className="w-4 h-4 mr-1" alt="Start" /> 
         <span className="taskbar-text-adaptive">Start</span>
       </button>
 
