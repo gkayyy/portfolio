@@ -10,7 +10,7 @@ export default function FloppyDisk() {
     // Simulate floppy drive noise/delay
     setTimeout(() => {
       const link = document.createElement('a');
-      link.href = '/resume.pdf'; 
+      link.href = './resume.pdf'; 
       link.download = 'Ghufran_Khan_Resume.pdf';
       link.click();
       setIsMounting(false);
