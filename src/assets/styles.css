@@ -1,0 +1,326 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+/* THEME ENGINE */
+
+.dark-theme {
+
+--bg-color: #0a0014;
+
+--term-bg: #0d001a;
+
+--text-primary: #00f2ff;
+
+--text-secondary: #ccff00;
+
+--text-body: #ffffff;
+
+--tag-bg: rgba(0, 242, 255, 0.1);
+
+--win-blue: #000080;
+
+--stream-color: #00f2ff;
+
+--taskbar-text: #000000;
+
+--win-silver: #1a0033;
+
+--win-white: #ffffff;
+
+--win-border-light: #00f2ff;
+
+--win-border-dark: #000000;
+
+}
+
+.dark-theme button span,
+.dark-theme .font-mono,
+.dark-theme .cmd-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Ensure the Phone icon and Clock are bright */
+.dark-theme .text-blue-800,
+.dark-theme .text-gray-600 {
+  color: var(--text-primary) !important;
+}
+.dark-theme button.text-black {
+  color: var(--text-primary) !important;
+}
+
+/* Refined Floppy Disk Hover for Dark Mode */
+.dark-theme .win-outset:hover p {
+  color: var(--text-secondary) !important; /* Keep it yellow */
+  text-shadow: 0 0 10px var(--text-primary); /* Add Cyan glow on hover */
+  transition: all 0.3s ease;
+}
+
+/* Change the box hover from white to a deep purple/cyan tint */
+.dark-theme .win-outset:hover {
+  background-color: rgba(0, 242, 255, 0.1) !important; /* Subtle cyan tint */
+  border-color: var(--text-primary) !important;
+  box-shadow: inset 1px 1px 0px var(--win-white),
+              inset -1px -1px 0px var(--win-border-dark),
+              0 0 15px rgba(0, 242, 255, 0.2); /* Outer cyber glow */
+}
+
+/* Ensure the icon also reacts to the hover */
+.dark-theme .win-outset:hover svg {
+  color: var(--text-primary) !important;
+  filter: drop-shadow(0 0 5px var(--text-primary));
+}
+
+.light-theme {
+
+--bg-color: #008080;
+
+--term-bg: #ffffff;
+
+--text-primary: #000080;
+
+--text-secondary: #d32f2f;
+
+--text-body: #000000;
+
+--tag-bg: #e0e0e0;
+
+--win-blue: #0000aa;
+
+--stream-color: #004d4d;
+
+--taskbar-text: #000000;
+
+--win-silver: #c0c0c0;
+
+--win-white: #ffffff;
+
+--win-border-light: #ffffff;
+
+--win-border-dark: #808080;
+
+}
+
+
+
+/* --- HOVER LOGIC --- */
+
+
+
+/* DARK THEME HOVER */
+
+.dark-theme .win-inset:hover {
+
+background-color: rgba(255, 255, 255, 0.05) !important;
+
+transition: all 0.2s ease;
+
+border-left: 2px solid var(--text-secondary);
+
+}
+
+
+
+/* LIGHT THEME HOVER (Classic Win97 Highlight) */
+
+.light-theme .win-inset:hover {
+  background-color: rgba(0, 0, 80, 0.05) !important; /* Very faint blue tint */
+  transition: all 0.2s ease;
+  border-left: 2px solid var(--text-primary); /* Use the navy blue for the border */
+  /* This creates a "glow" effect that stays within the light theme aesthetic */
+  box-shadow: inset 1px 1px 0px #000, 
+              inset -1px -1px 0px var(--win-white),
+              0 0 8px rgba(0, 0, 128, 0.1); 
+}
+
+@media (max-width: 640px) {
+  .win-outset {
+    /* Slightly increase hit area for fingers */
+    padding: 10px !important;
+  }
+  
+  .dark-theme .win-outset:active {
+    /* Visual feedback for touch */
+    filter: brightness(1.2);
+    border-color: var(--text-primary);
+  }
+}
+
+/* Text Inversion for Light Theme Hover */
+
+.light-theme .win-inset:hover .title-text {
+  color: var(--text-primary) !important;
+  filter: brightness(1.2); /* Slight pop for the title */
+}
+
+.light-theme .win-inset:hover .body-text,
+.light-theme .win-inset:hover .cmd-text,
+.light-theme .win-inset:hover li {
+  color: var(--text-body) !important;
+}
+
+.light-theme .win-inset:active {
+  background-color: rgba(0, 0, 80, 0.1) !important;
+  transform: translateY(1px);
+}
+
+/* Cyber Glow for Dark Theme Hover */
+
+.group:hover .title-text {
+
+color: var(--text-secondary) !important;
+
+text-shadow: 0 0 8px rgba(204, 255, 0, 0.4);
+
+}
+
+
+
+/* Background Data-Stream Interaction */
+
+.data-line:hover {
+
+filter: brightness(1.5);
+
+color: var(--text-secondary) !important;
+
+opacity: 1 !important;
+
+z-index: 10;
+
+}
+
+
+
+.dark-theme .data-line:hover {
+
+text-shadow: 0 0 10px var(--text-primary);
+
+}
+
+
+
+.light-theme .data-line:hover {
+
+background: rgba(0, 128, 128, 0.8);
+
+color: white !important;
+
+}
+
+
+
+/* --- REST OF STYLES --- */
+
+
+
+.taskbar-text-force { color: #000 !important; }
+
+
+
+.win-outset {
+
+background-color: var(--win-silver);
+
+box-shadow: inset 1px 1px 0px var(--win-white),
+
+inset -1px -1px 0px var(--win-border-dark),
+
+1px 1px 0px #000;
+
+}
+
+
+
+.win-inset {
+
+background-color: rgba(0, 0, 0, 0.1);
+
+box-shadow: inset 1px 1px 0px #000,
+
+inset -1px -1px 0px var(--win-white);
+
+}
+
+
+
+.title-text { color: var(--text-primary); }
+
+.cmd-text { color: var(--text-secondary); }
+
+.body-text { color: var(--text-body); }
+
+.neon-glow { text-shadow: 0 0 8px rgba(0, 242, 255, 0.3); }
+
+
+
+.data-stream {
+
+position: fixed;
+
+top: 0; left: 0; width: 100vw; height: 100vh;
+
+background: var(--bg-color);
+
+z-index: -1;
+
+}
+
+
+
+.data-line {
+
+position: absolute;
+
+color: var(--stream-color);
+
+font-family: 'Fira Code', monospace;
+
+white-space: nowrap;
+
+animation: flow 12s linear infinite;
+
+cursor: pointer;
+
+pointer-events: auto;
+
+user-select: none;
+
+z-index: 1;
+
+}
+
+
+
+@keyframes flow {
+
+from { transform: translateY(-100%); }
+
+to { transform: translateY(100vh); }
+
+}
+
+
+
+.custom-scrollbar::-webkit-scrollbar { width: 14px; }
+
+.custom-scrollbar::-webkit-scrollbar-track {
+
+background: #dfdfdf;
+
+box-shadow: inset 1px 1px #000;
+
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+
+background: #c0c0c0;
+
+box-shadow: inset 1px 1px #fff, inset -1px -1px #808080, 1px 1px #000;
+
+}
+
